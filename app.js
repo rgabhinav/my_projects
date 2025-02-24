@@ -17,6 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', indexRouter);
 app.use('/user', userRouter);
 
+app.get('/create', function(){
+    res.send('New user created')
+});
+
 app.listen(process.env.PORT || port, () => {
     console.log(`Server is running on port ${port}`);
 });
